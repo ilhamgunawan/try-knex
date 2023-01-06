@@ -1,0 +1,26 @@
+{
+  "name": "try-knex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc",
+    "start-staging": "node -r dotenv/config dist/index.js dotenv_config_path=.env.staging",
+    "start-production": "node -r dotenv/config dist/index.js dotenv_config_path=.env.staging",
+    "dev-staging": "concurrently \"npx tsc --watch\" \"nodemon -r dotenv/config -q dist/index.js dotenv_config_path=.env.staging\"",
+    "dev-production": "concurrently \"npx tsc --watch\" \"nodemon -r dotenv/config -q dist/index.js dotenv_config_path=.env.production\""
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/pg": "^8.6.6",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "knex": "^2.3.0",
+    "pg": "^8.8.0"
+  }
+}
